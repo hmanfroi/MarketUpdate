@@ -38,7 +38,7 @@ class InstrumentService {
         // I don't make the request to load data
         // The most usual is request using Alamofire
         
-        // For this sample generate Random Values
+        // For this sample I generate Random Values
         var instrumentTemp: [InstrumentData] = []
         for i in 0 ..< GKRandomSource.sharedRandom().nextInt(upperBound: 100) {
             
@@ -51,7 +51,7 @@ class InstrumentService {
         self.inLoad = false
     }
     
-    // Update
+    // Update, it is possible use RxSwift to make more elegant than this code
     func callUpdateVC(){
         if let updaterVC = UIApplication.topViewController() as? UpdateVCProtocol {
             updaterVC.updateVC()

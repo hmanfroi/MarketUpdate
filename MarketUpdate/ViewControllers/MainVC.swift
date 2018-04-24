@@ -46,7 +46,7 @@ class MainVC: UpdaterViewController {
 
 // MARK: - TableView Delegates
 
-extension MainVC: UITableViewDataSource {
+extension MainVC: UITableViewDataSource,UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return InstrumentService.shared.instruments?.count ?? 0
@@ -62,8 +62,4 @@ extension MainVC: UITableViewDataSource {
         cell.configure(instrument: instruments[indexPath.row])
         return cell
     }
-}
-
-extension MainVC: UITableViewDelegate {
-    
 }
